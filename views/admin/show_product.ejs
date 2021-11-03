@@ -1,0 +1,82 @@
+<!-- Content Header (Page header) -->
+<div class="content-header">
+  <div class="container-fluid">
+    <div class="row mb-2">
+      <div class="col-sm-6">
+        <h1 class="m-0 text-dark">Data Produk</h1>
+      </div><!-- /.col -->
+      <div class="col-sm-6">
+        <ol class="breadcrumb float-sm-right">
+          <button class="breadcrumb-item btn btn-success"><a href="/latihan/admin/add" style="color: white;">Add Product</a></button>
+        </ol>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+
+<div class="container-fluid">
+    <div class="head-nav" style="display: flex; justify-content: space-between;">
+      <div class="col-md-4" style="display: flex;">
+        <p style="padding-top: 7px;">Show</p>
+        <select class="form-control"  id='firstList' name='firstList' onClick="getFoodItem()" style="width: 70px">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+        </select>
+    </div>
+    <div class="col1" style="display: flex; height: 37px;">
+      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" style="margin-left: 10px;">Search</button>
+    </div>
+  </div><!-- /.container-fluid -->
+  
+  <div class="content">
+    <div class="content-fluid">
+      <!-- table -->
+      <div class="box-body">
+        <table class="table">
+          <tr>
+            <th>Nama Produk</th>
+            <th>Gambar Produk</th>
+            <th>Harga Produk</th>
+            <th>Deskripsi Produk</th>
+            <th>Aksi</th>
+          </tr>
+          <!-- syntax -->
+          <%
+          if (data.length) {
+            for (let i = 0; i < data.length; i++) {
+          %>
+          <!-- end syntax -->
+          <tr>
+            <td><%= data[i].nama_produk %></td>
+            <td><img src="/public/images/<%= data[i].gambar_produk %>"></td>
+            <td>$ <%= data[i].harga_product %></td>
+            <td style="width: 400px;">
+              <%= data[i].des_product.substring(0,200) %>
+            </td>
+            <td>
+              <a class="btn btn-warning" style="width: 30px;" href="/latihan/admin/edit/<%= data[i].id_product %>"><i class="far fa-edit"></i></a>
+              <a class="btn btn-danger" style="width: 30px;" href="/latihan/admin/delete_product/<%= data[i].id_product %>"><i class="fas fa-trash"></i></a>
+            </td>
+          </tr>
+          <%
+              }
+            }
+          %>
+          <!-- <tr>
+            <td>Jam Tangan</td>
+            <td><img src="/public/images/p-6.png"></td>
+            <td>$ 50</td>
+            <td style="width: 400px;">Lorem ipsum data data data </td>
+            <td>
+              <a class="btn btn-warning" style="width: 30px;" href=""><i class="far fa-edit"></i></i></a>
+              <a class="btn btn-danger" style="width: 30px;" href=""><i class="fas fa-trash"></i></i></a>
+            </td>
+          </tr> -->
+        </table>
+      </div>
+    </div>
+  </div>

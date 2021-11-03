@@ -1,0 +1,24 @@
+<div class="box box-primary">
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <form role="form" method="post" action="/latihan/admin/add" enctype="multipart/form-data">
+            <div class="box-body">
+              <div class="form-group" style="width: 750px; margin-left: 70px; margin-top: 10px;">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control" name="title" id="exampleInputEmail1" placeholder="Enter title" required /><br>
+                <label>Textarea</label>
+                <textarea class="form-control" rows="3" name="description" placeholder="Enter description" required></textarea><br>
+                <label for="exampleInputEmail1">Price</label>
+                <input type="number" class="form-control" name="price" placeholder="Enter price number" required /><br>
+                <label for="exampleInputFile">Image Upload</label><br>
+                <input type="file" name="image" id="exampleInputFile" required />
+              </div>
+              </div>
+            <div class="box-footer" style="margin-left: 70px">
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+      </div><!--/. container-fluid -->
+    </section>
+</div>

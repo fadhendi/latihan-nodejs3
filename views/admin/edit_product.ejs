@@ -1,0 +1,42 @@
+<div class="box box-primary">
+  <%
+  if (data.length) {
+    for (let i = 0; i < data.length; i++) {
+  %>
+
+<form role="form" method="post" action="/latihan/admin/edit/<%= data[i].id_product %>" enctype="multipart/form-data" style="width: 750px; margin-left: 70px; margin-top: 10px;">
+  <div class="box-body">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Title</label>
+      <input type="text" class="form-control" name="title" id="exampleInputEmail1" required value="<%= data[i].nama_produk %>" /><br>
+      <label>Textarea</label>
+      <textarea class="form-control" rows="3" name="description" style="height: 150px;" required><%= data[i].des_product %></textarea><br>
+      <label>Price</label>
+      <input type="number" class="form-control" name="price" required value="<%= data[i].harga_product %>"><br>
+      <label for="exampleInputFile">Image Upload</label><br>
+      
+      <img src="/public/images/<%= data[i].gambar_produk %>"><br>
+
+      <input type="file" name="image" id="exampleInputFile" />
+      <input type="hidden" class="form-control" name="image_old" id="exampleInputEmail1" value="<%= data[i].gambar_produk %>" /><br>
+    </div>
+    
+    <!-- textarea -->
+    <!-- <div class="form-group">
+      
+    </div>
+    <div class="form-group">
+     
+    </div>
+  </div> -->
+  <!-- /.box-body -->
+
+  <div class="box-footer">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+<% 
+    }
+  }
+%>
+</div>
